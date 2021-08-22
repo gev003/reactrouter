@@ -11,7 +11,6 @@ function Shop() {
       const data = await fetch("https://jsonplaceholder.typicode.com/posts");
       const response = await data.json();
       setItems(response);
-      console.log(response);
       localStorage.setItem("userPosts", JSON.stringify(response));
     } else {
       setItems(JSON.parse(info));
