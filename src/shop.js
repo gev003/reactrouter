@@ -1,21 +1,15 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Context from "./context";
 
 function Shop() {
-  const [items, setItems] = useState([]);
+  const { updateValue, state } = useContext(Context);
 
   const fetchItems = async () => {
-    let info = localStorage.getItem("userPosts");
-    if (!info) {
-      const data = await fetch("https://jsonplaceholder.typicode.com/posts");
-      const response = await data.json();
-      setItems(response);
-      console.log(response);
-      localStorage.setItem("userPosts", JSON.stringify(response));
-    } else {
-      setItems(JSON.parse(info));
-    }
+    const data = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const response = await data.json();
+    updateValue(response);
   };
 
   useEffect(() => {
@@ -25,7 +19,7 @@ function Shop() {
   return (
     <div>
       <h1>Shop page</h1>
-      {items.map((obj) => {
+      {state.map((obj) => {
         return (
           <div key={obj.id}>
             <span>

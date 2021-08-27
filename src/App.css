@@ -16,3 +16,9 @@ nav {
   justify-content: space-around;
   list-style: none;
 }
+.activeLi {
+  color: red;
+}
+.homepage {
+  color: #fff;
+}

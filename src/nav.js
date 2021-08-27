@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useState, useEffect, useReducer, useRef } from "react";
 import "./App.css";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  useLocation,
+  useHistory,
+  useParams,
+  useRouteMatch,
+} from "react-router-dom";
 
 function Nav() {
   const navStyle = {
     color: "white",
   };
+
+  const { pathname } = useLocation();
+
   return (
     <nav>
-      <h3>Logo</h3>
+      <Link to="/">
+        <h3 style={{ color: pathname === "/" ? "#fff" : "" }}>Logo</h3>
+      </Link>
       <ul className="nav-links">
-        <Link style={navStyle} to="/about">
-          <li>About</li>
+        <Link to="/about">
+          <li style={{ color: pathname === "/about" ? "#fff" : "" }}>About</li>
         </Link>
-        <Link style={navStyle} to="/shop">
+        <NavLink to="/shop" activeClassName="activeLi">
           <li>Shop</li>
-        </Link>
+        </NavLink>
       </ul>
     </nav>
   );
