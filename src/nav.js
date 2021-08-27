@@ -12,6 +12,7 @@ import {
 function Nav() {
   const navStyle = {
     color: "white",
+    textDecoration: "none",
   };
 
   const { pathname } = useLocation();
