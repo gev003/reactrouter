@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer, useRef } from "react";
-import "./App.css";
+import "./App.scss";
 import {
   Link,
   NavLink,
@@ -19,15 +19,15 @@ function Nav() {
 
   return (
     <nav>
-      <Link to="/">
-        <h3 style={{ color: pathname === "/" ? "#fff" : "" }}>Logo</h3>
+      <Link to="/" style={navStyle}>
+        <img src="https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png"></img>
       </Link>
       <ul className="nav-links">
-        <Link to="/about">
-          <li style={{ color: pathname === "/about" ? "#fff" : "" }}>About</li>
+        <Link to="/about" style={{textDecoration: "none",}}>
+          <li style={{ color: pathname === "/about" ? "red" : "" }}>About</li>
         </Link>
-        <NavLink to="/shop" activeClassName="activeLi">
-          <li>Shop</li>
+        <NavLink to="/shop" style={{textDecoration: "none",}}>
+          <li style={{ color: pathname === "/shop" ? "red" : "" }}>Shop</li>
         </NavLink>
       </ul>
     </nav>

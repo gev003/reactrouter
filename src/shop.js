@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Context from "./context";
 
@@ -17,11 +16,11 @@ function Shop() {
   }, []);
 
   return (
-    <div>
+    <div className="mainDiv">
       <h1>Shop page</h1>
       {state.map((obj) => {
         return (
-          <div key={obj.id}>
+          <div key={obj.id} className="content">
             <span>
               <Link to={`/shop/${obj.id}`}>{obj.title}</Link>
             </span>{" "}

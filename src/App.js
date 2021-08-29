@@ -1,5 +1,5 @@
 import About from "./about";
-import "./App.css";
+import "./App.scss";
 import Nav from "./nav";
 import Shop from "./shop";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -28,7 +28,6 @@ function App() {
       <Router>
         <div className="App">
           <Nav />
-
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />

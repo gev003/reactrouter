@@ -1,0 +1,47 @@
+%flexible {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+$size: 40px;
+
+.App {
+  text-align: center;
+}
+.mainDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .content {
+    background-color: rgb(177, 177, 177);
+    margin: 5px 0;
+    width: 80%;
+    padding: 5px 15px;
+    border-radius: 5px;
+  }
+  .content:nth-child(2n + 1) {
+    background-color: rgb(219, 219, 219);
+  }
+}
+
+nav {
+  @extend %flexible;
+  background-color: rgb(79, 80, 79);
+  img {
+    width: $size * 2;
+    height: $size;
+  }
+  .nav-links {
+    @extend %flexible;
+    width: auto;
+    text-decoration: non;
+    li {
+      margin: 20px;
+      text-decoration: none;
+      list-style: none;
+      color: white;
+    }
+  }
+}
